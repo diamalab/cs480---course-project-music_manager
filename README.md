@@ -12,8 +12,8 @@ music_manager
 
 
 # Author(s)
-Sai Samarth
-Oscar Devora
+1. Sai Samarth
+2. Oscar Devora
 
 # Challenge
 We would like to create a database to manage a music platform that would contain all kinds of data that a user requires.
