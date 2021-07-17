@@ -39,7 +39,7 @@ CREATE TABLE album {
 
 CREATE TABLE genre {
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(100) NOT NULL CHECK (id IN ("Hip-Hop", "Rock", "R&B", "Country", "Pop", "K-Pop", "Classical", "Soul", "Dance/Electronic", "Jazz", "Punk", "Desi", "Metal")),
+	name VARCHAR(100) NOT NULL CHECK (name IN ("Hip-Hop", "Rock", "R&B", "Country", "Pop", "K-Pop", "Classical", "Soul", "Dance/Electronic", "Jazz", "Punk", "Desi", "Metal")),
 	PRIMARY KEY(id)
 };
 
