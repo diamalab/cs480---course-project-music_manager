@@ -17,13 +17,13 @@ CREATE TABLE playlist (
 );
 
 CREATE TABLE song_info (
-	id INT AUTO_INCREMENT,
+	song_info_id INT AUTO_INCREMENT,
 	song_id INT,
 	artist_id VARCHAR(100) NOT NULL,
 	album_id VARCHAR(100) NOT NULL,
-	genre _id VARCHAR(100)
-	PRIMARY KEY(id),
-	FOREIGN KEY(song_id) REFERENCES song(id)
+	genre _id VARCHAR(100),
+	PRIMARY KEY(song_info_id),
+	FOREIGN KEY(song_id) REFERENCES song(id),
 	FOREIGN KEY(artist_id) REFERENCES  artist_info(artist_id),
 	FOREIGN KEY(album_id) REFERENCES album(id),
 	FOREIGN KEY(genre_id) REFERENCES genre(id)
@@ -34,7 +34,7 @@ CREATE TABLE album (
 	name VARCHAR(200),
 	release_date DATE,
 	genre INT,
-	PRIMARY KEY(id),
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE genre (
@@ -53,8 +53,9 @@ CREATE TABLE artist (
 CREATE TABLE artist_info (
 	artist_id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(200),
-	email VARCHAR(200)
-	PRIMARY KEY(artist_id)
+	email VARCHAR(200),
+	PRIMARY KEY(artist_id),
+	FOREIGN KEY(artist_id) REFERENCES artist(id)
 );
 
 CREATE TABLE album_s (
