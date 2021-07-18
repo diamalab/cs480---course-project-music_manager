@@ -117,4 +117,3 @@ CREATE TABLE follow (
 	FOREIGN KEY(user_id) REFERENCES user(id),
 	FOREIGN KEY(follower_id) REFERENCES user(id)
 );
-
