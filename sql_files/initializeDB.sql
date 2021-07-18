@@ -44,9 +44,9 @@ CREATE TABLE genre (
 );
 
 CREATE TABLE artist (
-	id INT NOT NULL AUTO_INCREMENT,
+	id VARCHAR(200) NOT NULL UNIQUE,
 	artist_name VARCHAR(200),
-	keyword VARCHAR(200) UNIQUE NOT NULL,
+	keyword VARCHAR(200) NOT NULL UNIQUE,
 	PRIMARY KEY(id)	
 );
 
@@ -59,31 +59,35 @@ CREATE TABLE artist_info (
 );
 
 CREATE TABLE album_s (
-	id INT NOT NULL AUTO_INCREMENT,
-	keyword VARCHAR(200) UNIQUE NOT NULL,
-	album_id INT NOT NULL
+	id VARCHAR(200) NOT NULL UNIQUE,
+	keyword VARCHAR(200) NOT NULL UNIQUE,
+	album_id INT NOT NULL,
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE song_s (
-	id INT NOT NULL AUTO_INCREMENT,
+	id VARCHAR(200) NOT NULL UNIQUE,
 	song_id INT NOT NULL,
-	keyword VARCHAR(200) UNIQUE NOT NULL,
+	keyword VARCHAR(200) NOT NULL UNIQUE,
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE search (
 	id INT NOT NULL AUTO_INCREMENT,
-	keyword VARCHAR(200) NOT NULL,
+	song_word VARCHAR(200),
+	album_word VARCHAR(200),
+	artist_word VARCHAR(200),
 	playlist_id INT NOT NULL,
-	PRIMARY KEY (id)
+	PRIMARY KEY (id),
+	FOREIGN KEY(song_word) REFERENCES song_s(id),
+	FOREIGN KEY(album_word) REFERENCES album_s(id),
+	FOREIGN KEY(artist_word) REFERENCES artist(id)
 );
 
 CREATE TABLE keyword (
 	id INT NOT NULL AUTO_INCREMENT,
 	word VARCHAR(200) NOT NULL,
 	PRIMARY KEY(id),
-	FOREIGN KEY(word) REFERENCES song_s(keyword),
-	FOREIGN KEY(word) REFERENCES album_s(keyword),
 	FOREIGN KEY(word) REFERENCES artist(keyword)
 );
 
@@ -98,10 +102,10 @@ CREATE TABLE user_playlist (
 
 CREATE TABLE user (
 	id INT NOT NULL AUTO_INCREMENT, 
-	name VARCHAR(200),
+	username VARCHAR(200),
 	email VARCHAR(200),
-	sex VARCHAR(200),
-	`password` VARCHAR(100) NOT NULL,
+	sex VARCHAR(200) NULL,
+	password VARCHAR(50) NOT NULL,
 	PRIMARY KEY(id)	
 );
 
