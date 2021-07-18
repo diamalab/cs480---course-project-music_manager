@@ -46,7 +46,7 @@ CREATE TABLE genre (
 CREATE TABLE artist (
 	id INT NOT NULL AUTO_INCREMENT,
 	artist_name VARCHAR(200),
-	keyword VARCHAR(200) NOT NULL,
+	keyword VARCHAR(200) UNIQUE NOT NULL,
 	PRIMARY KEY(id)	
 );
 
@@ -60,14 +60,14 @@ CREATE TABLE artist_info (
 
 CREATE TABLE album_s (
 	id INT NOT NULL AUTO_INCREMENT,
-	keyword VARCHAR(200),
+	keyword VARCHAR(200) UNIQUE NOT NULL,
 	album_id INT NOT NULL
 );
 
 CREATE TABLE song_s (
 	id INT NOT NULL AUTO_INCREMENT,
 	song_id INT NOT NULL,
-	keyword VARCHAR(200) NOT NULL,
+	keyword VARCHAR(200) UNIQUE NOT NULL,
 	PRIMARY KEY(id)
 );
 
@@ -81,7 +81,10 @@ CREATE TABLE search (
 CREATE TABLE keyword (
 	id INT NOT NULL AUTO_INCREMENT,
 	word VARCHAR(200) NOT NULL,
-	PRIMARY KEY(id)
+	PRIMARY KEY(id),
+	FOREIGN KEY(word) REFERENCES song_s(keyword),
+	FOREIGN KEY(word) REFERENCES album_s(keyword),
+	FOREIGN KEY(word) REFERENCES artist(keyword)
 );
 
 CREATE TABLE user_playlist (
@@ -99,8 +102,7 @@ CREATE TABLE user (
 	email VARCHAR(200),
 	sex VARCHAR(200),
 	`password` VARCHAR(100) NOT NULL,
-	PRIMARY KEY(id),
-	
+	PRIMARY KEY(id)	
 );
 
 CREATE TABLE follow (
