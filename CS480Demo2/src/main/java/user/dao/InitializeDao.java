@@ -140,9 +140,9 @@ public class InitializeDao {
 		statement.executeUpdate(sqlstmt);
 		
 		sqlstmt = "INSERT INTO playlist(song_id)"
-				+ "VALUES(1, 2, 3),"
-				+ "(1, 3, 4),"
-				+ "(4, 5, 2);";
+				+ "VALUES(1, 2),"
+				+ "(1, 3),"
+				+ "(4, 5);";
 		
 		statement.executeUpdate(sqlstmt);
 		
@@ -171,6 +171,56 @@ public class InitializeDao {
 				+ "VALUES (1, 3, 1, 1)"
 				+ "(2, 2, 3, 1),"
 				+ "(3, 1, 2, 3);";
+		
+		statement.executeUpdate(sqlstmt);
+		
+		sqlstmt = "INSERT INTO artist_info(artist_id, name, email)"
+				+ "VALUES(1, 'Kendrick', 'kdot@gmail.com'),"
+				+ "(2, 'Travis Scott', 'cactusjack@gmil.com'),"
+				+ "(3, 'Tyler', 'wolf@gmail.com');";
+		
+		statement.executeUpdate(sqlstmt);
+		
+		sqlstmt = "INSERT INTO song_s(id, song_id, keyword)"
+				+ "VALUES (1, 1, 'Humble'),"
+				+ "(2, 1, 'Sit down'),"
+				+ "(3, 2, 'DNA');";
+		
+		statement.executeUpdate(sqlstmt);
+		
+		sqlstmt = "INSERT INTO album_s(id, keyword, album_id)"
+				+ "VALUES (1, 'DAMN.', 3),"
+				+ "(2, 'LOVE(FEAT ZACARI', 3),"
+				+ "(3, 'EARFQUAKE', 2);";
+		
+		
+		statement.executeUpdate(sqlstmt);
+		
+		sqlstmt = "INSERT INTO search(song_word, album_word, artist_word, playlist_id)"
+				+ "VALUES ('Humble', 'DAMN.', 'Kendrick', 2),"
+				+ "('DNA', 'DAMN.', 'Kendrick', 1),"
+				+ "('EARFQUAKE', 'IGOR', 'Tyler', 2);";
+		
+		statement.executeUpdate(sqlstmt);
+		
+		sqlstmt = "INSERT INTO user_playlist(user_id, playlist)"
+				+ "VALUES (2, 1),"
+				+ "(1, 3),"
+				+ "(2, 3);";
+		
+		statement.executeUpdate(sqlstmt);
+		
+		sqlstmt = "INSERT INTO user(username, email, sex, password)"
+				+ "VALUES ('Sai', 'ssp5@uic.edu', 'M', 'password'),"
+				+ "('John', 'john456@gmail.com', 'M', 'password1'),"
+				+ "('Joe', 'joe123@gmail.com', 'M', 'pass567');";
+		
+		statement.executeUpdate(sqlstmt);
+		
+		sqlstmt = "INSERT INTO follow(user_id, follower_id)"
+				+ "VALUES(1, 2),"
+				+ "(2, 1),"
+				+ "(1, 3);";
 		
 		statement.executeUpdate(sqlstmt);
 		
