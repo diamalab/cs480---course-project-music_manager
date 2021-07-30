@@ -1,3 +1,4 @@
+artist.domain
 /**
  * Artist object
  * 
@@ -13,7 +14,11 @@ public class Artist {
 	private String name; 
 	private String keyword;
 	
-
+	 public Artist(String id, String name, String keyword) {
+	        this.id = id;
+	        this.name = name;
+		this.keyword = keyword;
+	    }
 	
 	public String getId() {
 		return id;
