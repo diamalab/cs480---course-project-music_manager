@@ -1,4 +1,4 @@
-
+playlist.domain
 public class Playlist {
 	/*
 	 * Correspond to the playlist table
@@ -7,6 +7,10 @@ public class Playlist {
 	private String id;
 	private String song_id;
 	
+	 public Playlist(String id, String song_id) {
+	        this.id = id;
+	        this.song_id = song_id;
+	    }
 
 	
 	public String getId() {
