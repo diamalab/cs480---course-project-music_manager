@@ -51,7 +51,7 @@ public class ArtistDao {
         PreparedStatement statement = jdbcConnection.prepareStatement(sql);
         statement.setString(1, artist.getId());
         statement.setString(2, artist.getName());
-        statement.setFloat(3, artist.getKeyword());
+        statement.setString(3, artist.getKeyword());
          
         boolean rowInserted = statement.executeUpdate() > 0;
         statement.close();
@@ -101,7 +101,8 @@ public class ArtistDao {
     }
      
     public boolean updateArtist(Artist artist) throws SQLException {
-        String sql = "UPDATE book SET name = ?, keyword = ?";
+        String sql = "UPDATE artist
+         SET name = ?, keyword = ?";
         sql += " WHERE id = ?";
         connect();
          
