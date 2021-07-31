@@ -26,7 +26,6 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/SongServletDelete'/>" method="post">
 	<input type="hidden" name="action" value="delete"/>
-	<input type="hidden" name="song_id" value=${sessionScope.session_user.song_id}/>
 	Song_id:   <input type="text" name="song_id" value="${form.song_id}"/>
 	<br/>
 	<input type="submit" value="Delete"/>

@@ -83,10 +83,8 @@ public class SongDao {
 			          .getConnection("jdbc:mysql://127.0.0.1:3306/music_manager?user=root&password=Goblin123!");
 			
 			
-			String sql = "Update song_table set song_name=?, artist=? album=?"
-					+ "Where song_id=?;";
+			String sql = "UPDATE song_table SET song_name=?, artist=?, album=? WHERE song_id=?";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
-		   // preparestatement.setString(1,user.getSong_id());
 		    preparestatement.setString(1,user.getSong_name());
 		    preparestatement.setString(2,user.getArtist_id());
 		    preparestatement.setString(3,user.getAlbum_id());
@@ -107,12 +105,9 @@ public class SongDao {
 			          .getConnection("jdbc:mysql://127.0.0.1:3306/music_manager?user=root&password=Goblin123!");
 			
 			
-			String sql = "DELETE FROM song_table WHERE song_id=?, song_name=?, artist_id=? album_id=?";
+			String sql = "DELETE FROM song_table WHERE song_id=?";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,user.getSong_id());
-		    preparestatement.setString(2,user.getSong_name());
-		    preparestatement.setString(3,user.getArtist_id());
-		    preparestatement.setString(4,user.getAlbum_id());
 
 		    preparestatement.executeUpdate();
 		} catch(SQLException e) {
