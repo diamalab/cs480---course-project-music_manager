@@ -11,8 +11,6 @@ import java.util.List;
 import user.domain.Song;
 
 public class SongDao {
-
-
 	
 	/**
 	 * get the search result with username 
@@ -43,10 +41,7 @@ public class SongDao {
 			throw new RuntimeException(e);
 		}
 		return song_id;
-	}
-	
-	
-	
+	}	
 	
 	/**
 	 * insert User
@@ -89,8 +84,7 @@ public class SongDao {
 		    preparestatement.setInt(2,user.getArtist_id());
 		    preparestatement.setInt(3,user.getAlbum_id());
 		    preparestatement.setInt(4,user.getSong_id());
-
-
+			
 		    preparestatement.executeUpdate();
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
@@ -143,6 +137,5 @@ public class SongDao {
 			throw new RuntimeException(e);
 		}
 		return list;
-		
 	}
 }
