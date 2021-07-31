@@ -1,8 +1,11 @@
 // playlist.domain
 public class Playlist {
-	/*
-	 * Correspond to the playlist table
-	 */
+/**
+ * Playlist object
+ * 
+ * @author Sai Samarth
+ * 
+ */
 	
         private String playlist_id;
 	private String playlist_name;
