@@ -25,13 +25,13 @@ import user.service.UserService;
  * Servlet implementation class UserServlet
  */
 
-public class SongServletAdd extends HttpServlet {
+public class SongServletUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SongServletAdd() {
+    public SongServletUpdate() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -66,7 +66,7 @@ public class SongServletAdd extends HttpServlet {
 
 		
 		try {
-			userservice.regist(form);
+			userservice.update(form);
 			
 			response.sendRedirect( request.getContextPath() + "/jsps/Song/top-song.jsp");
 		} catch (ClassNotFoundException | UserException e) {

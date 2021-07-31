@@ -19,18 +19,16 @@
   <h1>Add Song</h1>
 <p style="color: blue; font-weight: 900">${msg }</p>
 <form action="<c:url value='/SongServletAdd'/>" method="post">
-	<input type="hidden" name="method" value="add"/>
-	<input type="hidden" name="song_id" value=${sessionScope.session_user.song_id }/>
-	
-	Song ID:    :<input type="text" name="user_id" value="${form.song_id }"/> 
+	<input type="hidden" name="method" value="add"/>	
+	Song ID:    :<input type="text" name="song_id" value="${form.song_id }"/> 
 	<br/>
-	Song Name    :<input type="text" name="symbol" value="${form.song_name }"/>
+	Song Name    :<input type="text" name="song_name" value="${form.song_name }"/>
 	<span style="color: red; font-weight: 900">${errors.song_name }</span>
 	<br/>
-	Artist ID  :<input type="text" name="quantity" value="${form.artist_id }"/>
+	Artist ID  :<input type="text" name="artist_id" value="${form.artist_id }"/>
 	<span style="color: red; font-weight: 900">${errors.artist_id }</span>
 	<br/>
-	Album ID	:<input type="text" name="buy_price" value="${form.album_id }"/>
+	Album ID	:<input type="text" name="album_id" value="${form.album_id }"/>
 	<span style="color: red; font-weight: 900">${errors.album_id }</span>
 	<br/>
 	<input type="submit" value="Add"/>

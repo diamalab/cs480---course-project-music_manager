@@ -26,11 +26,12 @@
 <p style="color: red; font-weight: 900">${msg }</p>
 <form action="<c:url value='/SongServletUpdate'/>" method="post">
 	<input type="hidden" name="action" value="update"/>
-	<input type="hidden" name="song_id" value=${sessionScope.session_user.song_id }/>
 
 	Song ID:   <input type="text" name="song_id" value="${form.song_id }"/>
 	Song Name:    :<input type="text" name="song_name" value="${form.song_name}" />" />  
 	Artist ID    :<input type="text" name="artist_id" value="${form.artist_id }"/>
+	Album ID    :<input type="text" name="album_id" value="${form.album_id }"/>
+	
 	<span style="color: red; font-weight: 900">${errors.description }</span>
 	<br/>
 	<input type="submit" value="Update"/>
