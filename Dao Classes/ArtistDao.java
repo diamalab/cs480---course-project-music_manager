@@ -77,7 +77,7 @@ public class ArtistDao {
 		
 	}
 	
-	public Artist findById(int id) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+	public Artist findById(String artist_id) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 		Artist artist = new Artist();
 		try {
 			
