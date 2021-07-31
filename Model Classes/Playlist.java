@@ -4,22 +4,22 @@ public class Playlist {
 	 * Correspond to the playlist table
 	 */
 	
-    private int playlist_id;
+        private String playlist_id;
 	private String playlist_name;
-	private int user_id;
+	private String user_id;
 	
-	 public Playlist(int playlist_id, String playlist_name, int user_id) {
+	 public Playlist(String playlist_id, String playlist_name, String user_id) {
 	       this.playlist_id = playlist_id;
            this.playlist_name = playlist_name;
            this.user_id = user_id;
 	    }
 
 	
-	public int getPlaylistId() {
+	public String getPlaylistId() {
 		return playlist_id;
 	}
 
-	public void setPlaylistId(int id) {
+	public void setPlaylistId(String id) {
 		this.playlist_id = id;
 	}
 
@@ -30,12 +30,12 @@ public class Playlist {
 	public void setSong_Id(String name) {
 		this.playlist_name = name;
 	}
-
-    public int getUserID() {
+	
+	public String getUserID() {
         return user_id;
-    }
+	}
 
-    public void setUserId(int id) {
+    public void setUserId(String id) {
         this.user_id = id;
     }
 
