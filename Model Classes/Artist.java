@@ -10,17 +10,17 @@ public class Artist {
 	 * Correspond to the artist table
 	 */
 	
-	private int artist_id;
+	private String artist_id;
 	private String artist_name; 
 	private String artist_email;
 	
 	 public Artist(String artist_id, String artist_name, String artist_email) {
 	        this.artist_id = artist_id;
 	        this.artist_name = artist_name;
-            this.artist_email = artist_email;
+		this.artist_email = artist_email;
 	    }
 	
-	public int getArtistID() {
+	public String getArtistID() {
 		return id;
 	}
 
