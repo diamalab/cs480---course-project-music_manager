@@ -1,8 +1,11 @@
 // playlistsongs.domain
 public class PlaylistSongs {
-	/*
-	 * Correspond to the playlist_songs table
-	 */
+/**
+ * PlaylistSongs object
+ * 
+ * @author Sai Samarth
+ * 
+ */
 	
     private String playlist_songs_id;
 	private String playlist_id;
