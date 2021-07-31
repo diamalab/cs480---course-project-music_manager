@@ -110,9 +110,7 @@ public class ArtistDao {
 	} catch(SQLException e) {
 		throw new RuntimeException(e);
 	}
-	return artist;
-		
-		
+	return artist;	
 	}
 	
 	public Artist delete(Artist artist) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
@@ -130,7 +128,6 @@ public class ArtistDao {
 	} catch(SQLException e) {
 		throw new RuntimeException(e);
 	}
-	return artist;
-		
+	return artist;	
 	}
 }
