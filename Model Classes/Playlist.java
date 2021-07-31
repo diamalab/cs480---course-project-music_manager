@@ -34,7 +34,7 @@ public class Playlist {
 		this.playlist_name = name;
 	}
 	
-	public String getUserID() {
+	public String getUserId() {
         return user_id;
 	}
 
