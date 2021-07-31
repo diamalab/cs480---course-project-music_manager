@@ -30,7 +30,7 @@ public class Playlist {
 		return playlist_name;
 	}
 
-	public void setSong_Id(String name) {
+	public void setPlaylistName(String name) {
 		this.playlist_name = name;
 	}
 	
