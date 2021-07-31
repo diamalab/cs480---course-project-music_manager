@@ -64,10 +64,10 @@ public class SongDao {
 			
 			String sql = "insert into song_table values(?,?,?,?)";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
-		    preparestatement.setString(1,user.getSong_id());
+		    preparestatement.setInt(1,user.getSong_id());
 		    preparestatement.setString(2,user.getSong_name());
-		    preparestatement.setString(3,user.getArtist_id());
-		    preparestatement.setString(4,user.getAlbum_id());
+		    preparestatement.setInt(3,user.getArtist_id());
+		    preparestatement.setInt(4,user.getAlbum_id());
 
 		    preparestatement.executeUpdate();
 		} catch(SQLException e) {
@@ -83,12 +83,12 @@ public class SongDao {
 			          .getConnection("jdbc:mysql://127.0.0.1:3306/music_manager?user=root&password=Goblin123!");
 			
 			
-			String sql = "UPDATE song_table SET song_name=?, artist=?, album=? WHERE song_id=?";
+			String sql = "UPDATE song_table SET song_name=?, artist_id=?, album_id=? WHERE song_id=?";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
 		    preparestatement.setString(1,user.getSong_name());
-		    preparestatement.setString(2,user.getArtist_id());
-		    preparestatement.setString(3,user.getAlbum_id());
-		    preparestatement.setString(4,user.getSong_id());
+		    preparestatement.setInt(2,user.getArtist_id());
+		    preparestatement.setInt(3,user.getAlbum_id());
+		    preparestatement.setInt(4,user.getSong_id());
 
 
 		    preparestatement.executeUpdate();
@@ -107,7 +107,7 @@ public class SongDao {
 			
 			String sql = "DELETE FROM song_table WHERE song_id=?";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
-		    preparestatement.setString(1,user.getSong_id());
+		    preparestatement.setInt(1,user.getSong_id());
 
 		    preparestatement.executeUpdate();
 		} catch(SQLException e) {
@@ -117,7 +117,7 @@ public class SongDao {
 	
 	
 	
-	public List<Object> findall() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
+	public List<Object> findallSongs() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
 		List<Object> list = new ArrayList<>();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
@@ -131,10 +131,10 @@ public class SongDao {
 			
 			while(resultSet.next()){
 				Song user = new Song();
-				user.setSong_id(resultSet.getString("song_id"));
+				user.setSong_id(resultSet.getInt("song_id"));
 	    		user.setSong_name(resultSet.getString("song_name"));
-	    		user.setArtist_id(resultSet.getString("artist_id"));
-	    		user.setAlbum_id(resultSet.getString("album_id"));
+	    		user.setArtist_id(resultSet.getInt("artist_id"));
+	    		user.setAlbum_id(resultSet.getInt("album_id"));
 
 	    		list.add(user);
 			 }

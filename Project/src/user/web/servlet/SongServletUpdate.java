@@ -59,10 +59,10 @@ public class SongServletUpdate extends HttpServlet {
 			info.add(values[0]);
 			System.out.println(name + ": " + Arrays.toString(values));
 		}
-		form.setSong_id(info.get(1));
+		form.setSong_id(Integer.parseInt(info.get(1)));
 		form.setSong_name(info.get(2));
-		form.setArtist_id(info.get(3));
-		form.setAlbum_id(info.get(4));
+		form.setArtist_id(Integer.parseInt(info.get(3)));
+		form.setAlbum_id(Integer.parseInt(info.get(4)));
 
 		
 		try {

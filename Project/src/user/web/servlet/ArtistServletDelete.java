@@ -15,8 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import user.dao.UserDao;
+import user.domain.Artist;
 import user.domain.Song;
 import user.domain.User;
+import user.service.ArtistService;
 import user.service.SongService;
 import user.service.UserException;
 import user.service.UserService;
@@ -25,13 +27,13 @@ import user.service.UserService;
  * Servlet implementation class UserServlet
  */
 
-public class SongServletDelete extends HttpServlet {
+public class ArtistServletDelete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SongServletDelete() {
+    public ArtistServletDelete() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -48,9 +50,9 @@ public class SongServletDelete extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Map<String, String> form = new HashMap<String,String>();
-		SongService userservice = new SongService();
+		ArtistService userservice = new ArtistService();
 		Map<String,String[]> paramMap = request.getParameterMap();
-		Song form = new Song();
+		Artist form = new Artist();
 		List<String> info = new ArrayList<String>();
 		
 		for(String name : paramMap.keySet()) {
@@ -59,12 +61,12 @@ public class SongServletDelete extends HttpServlet {
 			info.add(values[0]);
 			System.out.println(name + ": " + Arrays.toString(values));
 		}
-		form.setSong_id(Integer.parseInt((info.get(1))));
+		form.setArtist_id((info.get(1)));
 	
 		try {
 			userservice.delete(form);
 			
-			response.sendRedirect( request.getContextPath() + "/jsps/Song/top-song.jsp");
+			response.sendRedirect( request.getContextPath() + "/jsps/Artist/top-artist.jsp");
 		} catch (ClassNotFoundException | UserException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

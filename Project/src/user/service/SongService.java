@@ -18,7 +18,7 @@ private SongDao songDao;
     }
     
 	public List<Object> findall() throws InstantiationException, IllegalAccessException, ClassNotFoundException{
-		return songDao.findall();
+		return songDao.findallSongs();
 		
 	}
     
