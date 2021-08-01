@@ -128,6 +128,25 @@ public class UserDao {
 			          .executeQuery("select * from song, artist, user, playlist_songs, album, following, playlist;");
 
 			      writeResultSet(resultSet);
+			// find all followers of a user
+			resultSet = statement.executeQuery("select u.user_name from following f join user u on u.user_id = f.follower_id and f.user_id = 02")
+			writeResultSet(resultSet);
+			
+			// Songs from the hip-hop genre
+			resultSet = statement.executeQuery("SELECT s.song_nameFROM song s INNER JOIN album a ON a.artist_id = s.artist_id AND a.genre = ‘Hip-Hop’;")
+			writeResultSet(resultSet);
+			
+			// Playlists of a user's followers
+			resultSet = statement.executeQuery("SELECT * FROM playlist WHERE user_id IN (SELECT follower_id FROM following WHERE user_id=02);")
+			writeResultSet(resultSet);
+			
+			// find all playlist that only have songs by one artist
+			resultSet = statement.executeQuery("SELECT p.playlist_name FROM playlist p JOIN playlist_songs ps ON p.playlist_id = ps.playlist_id JOIN song s ON ps.song_id = s.song_id GROUP BY p.playlist_id HAVING COUNT(DISTINCT s.artist_id) = 1;")
+			writeResultSet(resultSet);
+			
+			// find the most popular genre and the number of songs
+			resultSet = statement.executeQuery("SELECT a.genre, count(*) songs from album a INNER JOIN song s ON a.album_id = s.album_id GROUP BY a.genre ORDER BY 2 DESC LIMIT 1;")
+			writeResultSet(resultSet);	
 		    
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
