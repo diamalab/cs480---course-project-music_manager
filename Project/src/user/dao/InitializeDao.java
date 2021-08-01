@@ -22,7 +22,7 @@ import user.domain.User;
  * DDL functions performed in database
  *
  */
-public class UserDao {
+public class InitializeDao {
 	
 	
 	/**
