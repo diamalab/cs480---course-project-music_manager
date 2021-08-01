@@ -157,7 +157,7 @@ public class SongDao {
 			          .getConnection("jdbc:mysql://127.0.0.1:3306/music_manager?user=root&password=Goblin123!");
 			
 			
-			String sql = "select * from song_table Where song_name='song'";
+			String sql = "select * from song_table order by artist_id";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
 			ResultSet resultSet = preparestatement.executeQuery();
 			
