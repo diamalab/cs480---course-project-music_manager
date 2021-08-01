@@ -157,19 +157,21 @@ public class AlbumDao {
 			          .getConnection("jdbc:mysql://127.0.0.1:3306/music_manager?user=root&password=Goblin123!");
 			
 			
-			String sql = "select * from album_table Where artist_name='artist'";
+// 			String sql = "select * from album_table Where artist_name='artist'";
+// 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
+// 			ResultSet resultSet = preparestatement.executeQuery();
+			String sql = "select count(album_id) from album where genre = 'Hip-Hop'";
 			PreparedStatement preparestatement = connect.prepareStatement(sql); 
-			ResultSet resultSet = preparestatement.executeQuery();
-			
-			while(resultSet.next()){
-				Album user = new Album();
-				user.setAlbum_id(resultSet.getInt("album_id"));
-	    		user.setAlbum_name(resultSet.getString("album_name"));
-	    		user.setArtist_id(resultSet.getInt("artist_id"));
-	    		user.setGenre(resultSet.getString("genre"));
+			preparestatement.executeUpdate();
+// 			while(resultSet.next()){
+// 				Album user = new Album();
+// 				user.setAlbum_id(resultSet.getInt("album_id"));
+// 	    		user.setAlbum_name(resultSet.getString("album_name"));
+// 	    		user.setArtist_id(resultSet.getInt("artist_id"));
+// 	    		user.setGenre(resultSet.getString("genre"));
 
-	    		list.add(user);
-			 }
+// 	    		list.add(user);
+// 			 }
 			 
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
