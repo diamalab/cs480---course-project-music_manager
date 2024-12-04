@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>CS 480 Music Manager</display-name>
+  <servlet>
+    <description></description>
+    <display-name>UserServletRegister</display-name>
+    <servlet-name>UserServletRegister</servlet-name>
+    <servlet-class>user.web.servlet.UserServletRegister</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServletRegister</servlet-name>
+    <url-pattern>/UserServletRegister</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>SongServletAdd</display-name>
+    <servlet-name>SongServletAdd</servlet-name>
+    <servlet-class>user.web.servlet.SongServletAdd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SongServletAdd</servlet-name>
+    <url-pattern>/SongServletAdd</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>SongServletUpdate</display-name>
+    <servlet-name>SongServletUpdate</servlet-name>
+    <servlet-class>user.web.servlet.SongServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SongServletUpdate</servlet-name>
+    <url-pattern>/SongServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>SongServletDelete</display-name>
+    <servlet-name>SongServletDelete</servlet-name>
+    <servlet-class>user.web.servlet.SongServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SongServletDelete</servlet-name>
+    <url-pattern>/SongServletDelete</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>SongServletList</display-name>
+    <servlet-name>SongServletList</servlet-name>
+    <servlet-class>user.web.servlet.SongServletList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SongServletList</servlet-name>
+    <url-pattern>/SongServletList</url-pattern>
+  </servlet-mapping>
+  
+  
+      <servlet>
+    <description></description>
+    <display-name>ArtistServletAdd</display-name>
+    <servlet-name>ArtistServletAdd</servlet-name>
+    <servlet-class>user.web.servlet.ArtistServletAdd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArtistServletAdd</servlet-name>
+    <url-pattern>/ArtistServletAdd</url-pattern>
+  </servlet-mapping>
+  
+        <servlet>
+    <description></description>
+    <display-name>ArtistServletUpate</display-name>
+    <servlet-name>ArtistServletUpate</servlet-name>
+    <servlet-class>user.web.servlet.ArtistServletUpate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArtistServletUpate</servlet-name>
+    <url-pattern>/ArtistServletUpate</url-pattern>
+  </servlet-mapping>
+  
+  
+    <servlet>
+    <description></description>
+    <display-name>ArtistServletDelete</display-name>
+    <servlet-name>ArtistServletDelete</servlet-name>
+    <servlet-class>user.web.servlet.ArtistServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArtistServletDelete</servlet-name>
+    <url-pattern>/ArtistServletDelete</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>ArtistServletList</display-name>
+    <servlet-name>ArtistServletList</servlet-name>
+    <servlet-class>user.web.servlet.ArtistServletList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArtistServletList</servlet-name>
+    <url-pattern>/ArtistServletList</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+        <servlet>
+    <description></description>
+    <display-name>AlbumServletAdd</display-name>
+    <servlet-name>AlbumServletAdd</servlet-name>
+    <servlet-class>user.web.servlet.AlbumServletAdd</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumServletAdd</servlet-name>
+    <url-pattern>/AlbumServletAdd</url-pattern>
+  </servlet-mapping>
+  
+          <servlet>
+    <description></description>
+    <display-name>AlbumServletUpdate</display-name>
+    <servlet-name>AlbumServletUpdate</servlet-name>
+    <servlet-class>user.web.servlet.AlbumServletUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumServletUpdate</servlet-name>
+    <url-pattern>/AlbumServletUpdate</url-pattern>
+  </servlet-mapping>
+  
+            <servlet>
+    <description></description>
+    <display-name>AlbumServletDelete</display-name>
+    <servlet-name>AlbumServletDelete</servlet-name>
+    <servlet-class>user.web.servlet.AlbumServletDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumServletDelete</servlet-name>
+    <url-pattern>/AlbumServletDelete</url-pattern>
+  </servlet-mapping>
+  
+      <servlet>
+    <description></description>
+    <display-name>AlbumServletList</display-name>
+    <servlet-name>AlbumServletList</servlet-name>
+    <servlet-class>user.web.servlet.AlbumServletList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AlbumServletList</servlet-name>
+    <url-pattern>/AlbumServletList</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+   
+  <servlet>
+    <description></description>
+    <display-name>UserServletLogin</display-name>
+    <servlet-name>UserServletLogin</servlet-name>
+    <servlet-class>user.web.servlet.UserServletLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServletLogin</servlet-name>
+    <url-pattern>/UserServletLogin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>findAll</display-name>
+    <servlet-name>findAll</servlet-name>
+    <servlet-class>user.web.servlet.findAll</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>findAll</servlet-name>
+    <url-pattern>/findAll</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>login.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
